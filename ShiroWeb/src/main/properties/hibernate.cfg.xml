@@ -4,10 +4,20 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://172.16.10.200:3306/ifparkingmanage</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/shiro_demo</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-
-        <!-- DB schema will be updated if needed -->
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.format_sql">false</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</property>
+        <property name="hibernate.jdbc.batch_size">200</property>
+        <property name="hibernate.jdbc.fetch_size">200</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+    <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
+        <mapping class="com.pxc.user.po.UserEntity" />
     </session-factory>
+
 </hibernate-configuration>

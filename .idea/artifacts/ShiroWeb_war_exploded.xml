@@ -52,7 +52,7 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:1.5.2.RELEASE" />
           <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.1" />
           <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.10" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:6.0.5" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.17" />
           <element id="library" level="project" name="Maven: junit:junit:4.9" />
           <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.1" />
         </element>
