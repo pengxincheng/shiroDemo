@@ -17,4 +17,6 @@ public interface UserService {
     List<UserEntity> getAllUser();
 
     UserEntity getUserById(String id);
+
+    UserEntity getUserByUsername(String username);
 }

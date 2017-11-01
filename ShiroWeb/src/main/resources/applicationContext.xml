@@ -20,7 +20,7 @@
     <!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
     <mvc:annotation-driven />
     <!-- 自动扫描 -->
-    <context:component-scan base-package="com.pxc"></context:component-scan>
+    <context:component-scan base-package="com.pxc.*"></context:component-scan>
 
     <!-- 启动AspectJ支持 -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
@@ -57,6 +57,11 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>com.pxc.**.po</value>
+            </list>
+        </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>

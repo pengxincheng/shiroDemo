@@ -12,7 +12,7 @@ import java.util.List;
  * Created by pxc on 2017/10/31.
  */
 @Service("userService")
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Resource
     private UserDao userDao;
@@ -35,5 +35,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserEntity getUserById(String id) {
         return userDao.findById(id);
+    }
+
+    @Override
+    public UserEntity getUserByUsername(String username) {
+        return  userDao.getUserByUsername(username);
     }
 }

@@ -19,11 +19,11 @@
     <bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
         <!-- Set a net.sf.ehcache.CacheManager instance here if you already have one.  If not, a new one
              will be creaed with a default config:-->
-             <property name="cacheManager" ref="ehCacheManagerFactory"/>
+        <property name="cacheManager" ref="ehCacheManagerFactory"/>
         <!-- If you don't have a pre-built net.sf.ehcache.CacheManager instance to inject, but you want
              a specific Ehcache configuration to be used, specify that here.  If you don't, a default
              will be used.:-->
-      <!--  <property name="cacheManagerConfigFile" value="classpath:/ehcache.xml"/>-->
+        <!--  <property name="cacheManagerConfigFile" value="classpath:/ehcache.xml"/>-->
     </bean>
 
     <!-- spring对ehcache的缓存工厂支持 -->
@@ -102,6 +102,8 @@
         <property name="filterChainDefinitions">
             <value>
                 /login.jsp = anon
+                /userLogin.do = anon
+                /logout.do = logout
                 /403.jsp = anon
                 /logo.png = anon
                 /shiro.css = anon

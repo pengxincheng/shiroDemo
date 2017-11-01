@@ -10,10 +10,10 @@
         <module name="ShiroWeb" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ShiroParent" target="1.5" />
-      <module name="ShiroTest" target="1.5" />
-      <module name="ShiroWeb" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="ShiroParent" target="1.8" />
+      <module name="ShiroTest" target="1.8" />
+      <module name="ShiroWeb" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -8,4 +8,5 @@ import com.pxc.user.po.UserEntity;
  */
 public interface UserDao extends BasicDao<UserEntity> {
 
+    UserEntity getUserByUsername(String username);
 }

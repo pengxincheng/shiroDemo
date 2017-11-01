@@ -1,17 +1,13 @@
 package com.pxc.basicDao.basicDaoImpl;
 
 import com.pxc.basicDao.BasicDao;
-import org.hibernate.HibernateException;
 import org.hibernate.Query;
-import org.hibernate.Session;
-import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 
 import javax.annotation.Resource;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -59,8 +55,16 @@ public class BasicDaoImpl<T> implements BasicDao<T> {
         return null;
     }
 
-    public T uniqueResult(String hql, Object... paras) {
-        return null;
+    public Object uniqueResult(String hql, Object... paras) {
+        return hibernateTemplate.executeWithNativeSession(session -> {
+            Query query = session.createQuery(hql);
+            if (paras != null) {
+                for (int i = 0; i < paras.length; i++) {
+                    query.setParameter(i, paras[i]);
+                }
+            }
+            return query.uniqueResult();
+        });
     }
 
     public List findByHql(String hql, Object... paras) {
